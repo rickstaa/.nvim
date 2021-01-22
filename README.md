@@ -6,25 +6,35 @@ A backup repository I created to be able share my neovim setup across machines w
 
 1.  Run the following code in your terminal:
 
-
-    $ cd
-    $ git clone https://github.com/rickstaa/.nvim.git
-    $ ln -s -f .nvim/.nvimrc
+```bash
+cd
+git clone https://github.com/rickstaa/.nvim.git
+mkdir -p ~/.config/nvim
+ln -s -f ~/.nvim/init.vim ~/.config/nvim/init.vim
+```
 
 2.  Install Vundle plugin
 
+```bash
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.nvim/bundle/Vundle.vim
+```
 
-    $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.nvim/bundle/Vundle.vim
+3.  Install python for neovim (required for youcompleteme).
 
-3.  Run `nvim +PluginInstall +qall` in the terminal.
+```bash
+python3 -m pip install --user --upgrade pynvim
+```
 
-4.  Unpack YouCompleteMe Libraries
+4.  Run `nvim +PluginInstall +qall` in the terminal.
 
+5.  Unpack YouCompleteMe Libraries
 
-    $ sudo apt-get install build-essential cmake
-    $ sudo apt-get install python-dev python3-dev
-    $ cd ~/.nvim/bundle/YouCompleteMe
-    $ ./install.py --clang-completer
+```bash
+sudo apt-get install build-essential cmake
+sudo apt-get install python-dev python3-dev
+cd ~/.nvim/bundle/YouCompleteMe
+./install.py --clang-completer
+```
 
 ## Dependencies
 

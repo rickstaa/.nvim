@@ -1,14 +1,12 @@
-"" My Vim configuration file
-" http://github.com/https://github.com/rickstaa/my-vim-setup
-set encoding=utf-8  " The encoding displayed.
-set fileencoding=utf-8  " The encoding written to file.
+"" My neovim configuration file
+" http://github.com/https://github.com/rickstaa/.nvim
 
 " Vundle CODE
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.nvim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -51,7 +49,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"" Neccesairy plugin options
+"" Necessary plugin options
 " Lightline
 set noshowmode
 set laststatus=2
@@ -60,16 +58,13 @@ set laststatus=2
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"" USER DEFINED CODE
-
-"" Theme settings
-" Colors
-colorscheme molokai
+"" USER DEFINED COD
 
 " Fonts
 set guifont=Menlo\ Regular:h18
@@ -107,4 +102,7 @@ nnoremap <leader>q :qa!<cr>
 inoremap jj <ESC>
 
 " NerdTree key commands
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
